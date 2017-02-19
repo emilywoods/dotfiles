@@ -15,10 +15,10 @@ git clone git://github.com/emilywoods/dotfiles.git $HOME/.homesick/repos/dotfile
 $HOME/.homesick/repos/homeshick/homeshick.sh link
 
 # Neovim plugin manager
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Neovim undo history
-mkdir -p ~/.vim/undo/
+mkdir -p ~/.config/nvim/undo/
 
 # Neovim python plugin support
 pip install neovim
