@@ -8,6 +8,7 @@ Plug 'honza/vim-snippets'
 Plug 'rhysd/clever-f.vim'
 Plug 'scrooloose/syntastic'
 Plug 'sirver/ultisnips'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
@@ -234,4 +235,7 @@ let g:syntastic_check_on_wq = 0
 
 " let g:syntastic_ruby_checkers=['mri', 'rubocop']
 let g:syntastic_ruby_checkers=['mri']
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
 
