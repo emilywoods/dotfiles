@@ -6,6 +6,7 @@ Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss', 'scss.css'] }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'honza/vim-snippets'
 Plug 'rhysd/clever-f.vim'
+Plug 'rhysd/vim-crystal'
 Plug 'scrooloose/syntastic'
 Plug 'sirver/ultisnips'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -20,6 +21,9 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/matchit.zip'
+Plug 'rykka/riv.vim'
+Plug 'elmcast/elm-vim'
+Plug 'lpil/gleam.vim'
 
 call plug#end()
 

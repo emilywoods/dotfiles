@@ -1,12 +1,16 @@
 # This is Git's per-user configuration file.
+# Shortcut to view aliases: git config --list | grep alias
 [user]
 	name = Emily Woods
+	email = hello@emilywoods.me
 [alias]
 	  a    = add
 	  aa   = add -A
+	  aip  = add -ip
 
 	  b    = branch
-	  bd   = branch -d
+	  bd   = branch -D
+          bm   = branch -m
 
 	  co   = checkout
 	  cob  = checkout -b
@@ -15,6 +19,7 @@
 	  cm   = commit -m
 	  ca   = commit --amend
           cane = commit --amend --no-edit
+	  cfh  = commit --fixup HEAD
 
 	  cp   = cherry-pick
 
@@ -41,6 +46,7 @@
 	  pho  = push origin
 	  phoh = push origin head
 	  phod = push origin develop
+	  pfl   = push --force-with-lease
 
 	  pl   = pull
 	  plo  = pull origin
