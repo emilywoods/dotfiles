@@ -1,0 +1,33 @@
+alias bell='echo -e \\a'
+
+alias v='vim'
+alias n='nvim'
+
+alias l='ls'
+alias ll='ls -lh'
+alias la='ls -a'
+alias lla='ls -lah'
+
+alias c='cd'
+
+alias g='git'
+alias ga='git add .; and git status'
+alias gs='git status'
+
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....="cd ../../../.."
+
+alias k="kubectl"
+
+# Enable colored `grep` output
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias tree='tree -C'
+
+# Get week number
+alias week='date +%V'
+alias weather='curl wttr.in'
