@@ -6,8 +6,9 @@ export ZSH=/Users/emilywoods/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="dpoggi"
+ZSH_THEME="crunch-emily"
+
+alias python='python3'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -53,6 +54,9 @@ ZSH_THEME="dpoggi"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+# Kubectl plugin
+plugins=(git zsh-autosuggestions kubectl completion z)
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -83,3 +87,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+prompt_context () { }
+
+function greeting {
+  for i in $(seq 2); do
+    for i in $(seq $(tput cols)); do
+      printf ':|'
+    done
+  done | lolcat --freq=0.8 --spread $(tput cols)
+}
