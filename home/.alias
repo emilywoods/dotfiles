@@ -14,12 +14,16 @@ alias g='git'
 alias ga='git add .; and git status'
 alias gs='git status'
 
+# Browser
+alias qu='qutebrowser'
+
 # Navigation
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....="cd ../../../.."
 
+# Kubernetes
 alias k="kubectl"
 
 # Enable colored `grep` output
@@ -30,4 +34,6 @@ alias tree='tree -C'
 
 # Get week number
 alias week='date +%V'
+
+# Weather information
 alias weather='curl wttr.in'
