@@ -1,0 +1,129 @@
+;; Polybar - top bar
+;; Global WM Settings
+
+[global/wm]
+margin-bottom = 0
+margin-top = 0
+
+include-file = ~/.config/polybar/colours
+include-file = ~/.config/polybar/modules/title
+include-file = ~/.config/polybar/modules/battery
+include-file = ~/.config/polybar/modules/session
+include-file = ~/.config/polybar/modules/i3
+include-file = ~/.config/polybar/modules/keyboard
+include-file = ~/.config/polybar/modules/pulseaudio
+include-file = ~/.config/polybar/modules/date
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+;; Bar Settings
+
+[bar/top]
+monitor =
+monitor-fallback =
+override-redirect = false
+
+; Put the bar at the bottom of the screen
+bottom = false
+
+; Prefer fixed center position for the `modules-center` block
+fixed-center = true
+
+width = 100%
+height = 20
+
+offset-x = 0
+offset-y = 0
+
+background = ${colours.bg}
+foreground = ${colours.fg}
+line-size = 2
+line-color = ${colours.primary}
+
+border-bottom-size = 2
+border-color = ${colours.primary}
+padding = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = "FontAwesome:size=12;1"
+font-1 = "siji:size=12;1"
+font-2 = "Termsynu:size=12;2"
+
+modules-left = title
+modules-center = i3
+modules-right = keyboard battery date session
+
+; The separator will be inserted between the output of each module
+separator =
+
+; Opacity value between 0.0 and 1.0 used on fade in/out
+dim-value = 1.0
+wm-name = 
+
+; Locale used to localize various module data (e.g. date)
+; Expects a valid libc locale, for example: sv_SE.UTF-8
+locale = 
+
+tray-position = none
+tray-detached = false
+tray-maxsize = 16
+tray-background = ${root.background}
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 0
+tray-scale = 1.0
+
+enable-ipc = false
+
+; Fallback click handlers that will be called if
+; there's no matching module handler found.
+click-left = 
+click-middle = 
+click-right =
+scroll-up =
+scroll-down =
+double-click-left =
+double-click-middle =
+double-click-right =
+
+cursor-click = 
+cursor-scroll = 
+
+;; WM Workspace Specific
+
+;i3
+;;scroll-up = i3wm-wsnext
+;;scroll-down = i3wm-wsprev
+;;scroll-up = i3-msg workspace next_on_output
+;;scroll-down = i3-msg workspace prev_on_output
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+;; Application Settings
+
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+
+; Time in milliseconds that the input handler will wait between processing events
+throttle-input-for = 30
+
+; Reload upon receiving XCB_RANDR_SCREEN_CHANGE_NOTIFY events
+screenchange-reload = false
+
+; Define fallback values used by all module formats
+format-foreground = 
+format-background = 
+format-underline =
+format-overline =
+format-spacing =
+format-padding =
+format-margin =
+format-offset =
+
+; Enables pseudo-transparency for the bar
+; If set to true the bar can be transparent without a compositor.
+pseudo-transparency = false
+

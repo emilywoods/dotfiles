@@ -1,0 +1,8 @@
+[module/firefox]
+type = custom/script
+click-left = firefox --browser&
+click-middle = killall firefox&
+click-right = firefox --private-window&
+exec = echo %{T3}%{T-}
+format-foreground = ${colours.firefox}
+format-padding = 1

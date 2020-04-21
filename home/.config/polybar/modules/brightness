@@ -1,0 +1,10 @@
+[module/brightness]
+type = internal/backlight
+
+card = intel_backlight
+
+format = <label>
+format-padding = 1
+format-foreground = #FFF
+format-prefix = %{T2}%{T-}
+label = " %percentage%%"

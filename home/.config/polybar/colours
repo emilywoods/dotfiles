@@ -1,0 +1,19 @@
+[colours]
+white = #FFFFFF
+black = #000000
+
+danger = #ff1744
+
+bg = #263238
+fg = #DFDFDF
+primary = #F48FB1
+
+code = #CAE8D5
+filemanager = #ABD6BB
+firefox = #FFEC4A
+i3 = #fdd835
+files = #4C8BF5
+launcher = #204051
+session = #039be5
+terminal = #63FC01
+

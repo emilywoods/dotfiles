@@ -1,0 +1,36 @@
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; focused = Active workspace on focused monitor
+label-focused = %{T2}%{T-}
+label-focused-foreground = ${colours.i3}
+label-focused-padding = 1
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %{T2}%{T-}
+label-unfocused-foreground = ${colours.i3}
+label-unfocused-padding = ${self.label-focused-padding}
+
+; visible = Active workspace on unfocused monitor
+label-visible = %{T2}%{T-}
+label-visible-foreground = ${self.label-focused-foreground}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %{T2}%{T-}
+label-urgent-foreground = ${colours.danger}
+label-urgent-padding = ${self.label-focused-padding}
+
+; ws-icon-[0-9]+ = label;icon
+; NOTE: The label needs to match the name of the i3 workspace
+;;ws-icon-0 = 1;♚
+;;ws-icon-1 = 2;♛
+;;ws-icon-2 = 3;♜
+;;ws-icon-3 = 4;♝
+;;ws-icon-4 = 5;♞
+;;ws-icon-default = ♟
+; NOTE: You cannot skip icons, e.g. to get a ws-icon-6
+; you must also define a ws-icon-5.

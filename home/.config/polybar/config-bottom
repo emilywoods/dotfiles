@@ -1,0 +1,117 @@
+;; Polybar - bottom bar
+;; Global WM Settings
+
+[global/wm]
+margin-bottom = 0
+margin-top = 0
+
+include-file = ~/.config/polybar/colours
+include-file = ~/.config/polybar/modules/brightness
+include-file = ~/.config/polybar/modules/code
+include-file = ~/.config/polybar/modules/firefox
+include-file = ~/.config/polybar/modules/terminal
+include-file = ~/.config/polybar/modules/filesystem
+include-file = ~/.config/polybar/modules/cpu
+include-file = ~/.config/polybar/modules/memory
+include-file = ~/.config/polybar/modules/temperature
+include-file = ~/.config/polybar/modules/network
+include-file = ~/.config/polybar/modules/launcher
+include-file = ~/.config/polybar/modules/files
+include-file = ~/.config/polybar/modules/pulseaudio
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+;; Bar Settings
+
+[bar/bottom]
+monitor =
+monitor-fallback =
+monitor-strict = false
+override-redirect = false
+
+; Put the bar at the bottom of the screen
+bottom = true
+
+fixed-center = true
+
+width = 100%
+height = 20
+
+offset-x = 0
+offset-y = 0
+
+background = ${colours.bg}
+foreground = ${colours.fg}
+radius-top = 0.0
+radius-bottom = 0.0
+
+line-size = 2
+line-color = ${colours.primary}
+
+border-top-size = 2
+border-color = ${colours.primary}
+
+padding = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = "FontAwesome:size=12;1"
+font-1 = "siji:size=12;1"
+font-2 = "Termsynu:size=12;1"
+
+modules-left = launcher code firefox terminal files
+modules-center = filesystem cpu memory temperature network
+modules-right = pulseaudio brightness
+
+; The separator will be inserted between the output of each module
+separator =
+
+; Opacity value between 0.0 and 1.0 used on fade in/out
+dim-value = 1.0
+
+wm-name = 
+
+; Locale used to localize various module data (e.g. date)
+; Expects a valid libc locale, for example: sv_SE.UTF-8
+locale = 
+
+tray-position = none
+tray-detached = false
+tray-maxsize = 16
+tray-background = ${root.background}
+
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 0
+tray-scale = 1.0
+
+enable-ipc = false
+
+;; WM Workspace Specific
+
+;i3
+;;scroll-up = i3wm-wsnext
+;;scroll-down = i3wm-wsprev
+;;scroll-up = i3-msg workspace next_on_output
+;;scroll-down = i3-msg workspace prev_on_output
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+;; Application Settings
+
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+
+throttle-input-for = 30
+
+screenchange-reload = false
+
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+
+pseudo-transparency = false

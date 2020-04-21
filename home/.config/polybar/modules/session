@@ -1,0 +1,6 @@
+[module/session]
+type = custom/script
+click-left = obsession-logout -p ""
+exec = echo %{T2}%{T-}
+format-foreground = ${colours.session}
+format-padding = 1

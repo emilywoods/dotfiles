@@ -1,0 +1,30 @@
+[module/temperature]
+type = internal/temperature
+
+; Seconds to sleep between updates
+interval = 1.0
+
+thermal-zone = 0
+warn-temperature = 60
+
+; Whether or not to show units next to the temperature tokens (°C, °F)
+units = true
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+
+;   %temperature-c%   (default, temperature in °C)
+label = %temperature-c%
+
+;   %temperature-c%   (default, temperature in °C)
+label-warn = "%temperature-c%"
+label-warn-foreground = #f00
+
+; Requires the <ramp> tag
+; The icon selection will range from 0 to `warn-temperature`
+; with the current temperature as index.
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 

@@ -1,0 +1,29 @@
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ACAD
+full-at = 98
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <ramp-capacity><label-charging>
+format-charging-padding = 1
+label-charging = " %percentage%%"
+
+format-discharging = <ramp-capacity><label-discharging>
+format-discharging-padding = ${self.format-charging-padding}
+label-discharging = " %percentage%%"
+
+format-full-padding = ${self.format-charging-padding}
+format-full-prefix = %{T2}%{T-}
+label-full = " %percentage%%"
+
+ramp-capacity-0 = %{T2}%{T-}
+ramp-capacity-1 = %{T2}%{T-}
+ramp-capacity-2 = %{T2}%{T-}
+ramp-capacity-3 = %{T2}%{T-}
+ramp-capacity-4 = %{T2}%{T-}
+ramp-capacity-5 = %{T2}%{T-}

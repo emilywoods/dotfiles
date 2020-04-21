@@ -1,0 +1,8 @@
+; vscode
+[module/code]
+type = custom/script
+click-left = code&
+click-midlle = killall code&
+exec = echo %{T3}%{T-}
+format-foreground = ${colours.code}
+format-padding = 1

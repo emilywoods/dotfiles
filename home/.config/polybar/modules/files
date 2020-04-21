@@ -1,0 +1,5 @@
+[module/files]
+type = custom/script
+click-left = dolphin &
+exec = echo %{T3}  %{T-}
+format-foreground = ${colours.files}
