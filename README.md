@@ -9,7 +9,7 @@ nvim config, etc
 git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 
 # Download this repo
-git clone git://github.com/emilywoods/dotfiles.git $HOME/.homesick/repos/dotfiles
+git clone git@github.com:emilywoods/dotfiles.git $HOME/.homesick/repos/dotfiles
 
 # Link dotfiles into place
 $HOME/.homesick/repos/homeshick/homeshick.sh link
