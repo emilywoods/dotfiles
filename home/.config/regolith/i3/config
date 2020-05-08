@@ -242,6 +242,17 @@ floating_modifier $mod
 
 hide_edge_borders smart
 
+# Open applications on specific workspaces
+# Hint to find class name: xprop | grep CLASS
+assign [class="qutebrowser"] $ws2
+assign [class="Chromium"] $ws2
+assign [class="Firefox-esr"] $ws2
+assign [class="Firefox"] $ws2
+assign [class="Code"] $ws3
+assign [class="Jetbrains-idea-ce"] $ws3
+assign [class="Slack"] $ws9
+assign [class="Spotify"] $ws10
+
 ###############################################################################
 # Session Management
 ###############################################################################
@@ -276,7 +287,7 @@ bindsym $mod+Shift+p exec $i3-wm.program.shutdown
 
 ## Session // Lock Screen // <> Escape ##
 set_from_resource $i3-wm.program.lock i3-wm.program.lock dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
-bindsym $mod+Escape exec $i3-wm.program.lock
+bindsym $mod+Escape exec --no-startup-id ~/.config/i3/i3lock.sh
 
 ## Session // Sleep // <><Shift> s ##
 set_from_resource $i3-wm.program.sleep i3-wm.program.sleep systemctl suspend
@@ -531,3 +542,32 @@ set_from_resource $i3-wm.program.2 i3-wm.program.2 :
 exec --no-startup-id $i3-wm.program.2
 set_from_resource $i3-wm.program.3 i3-wm.program.3 :
 exec --no-startup-id $i3-wm.program.3
+
+# Set background image using feh
+exec --no-startup-id feh --bg-fill --randomize ~/Pictures/* 
+
+###############################################################################
+# Brightness
+###############################################################################
+
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec light -A 2
+bindsym XF86MonBrightnessDown exec light -U 2
+
+
+###############################################################################
+# Sound
+###############################################################################
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+###############################################################################
+# Lockscreen binding
+###############################################################################
+
+bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/i3lock.sh
