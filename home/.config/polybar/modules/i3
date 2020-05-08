@@ -5,17 +5,17 @@ index-sort = true
 wrapping-scroll = false
 
 ; focused = Active workspace on focused monitor
-label-focused = %{T2}%{T-}
+label-focused = %{T2}%{T-}
 label-focused-foreground = ${colours.i3}
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %{T2}%{T-}
+label-unfocused = %{T2}|%{T-}
 label-unfocused-foreground = ${colours.i3}
 label-unfocused-padding = ${self.label-focused-padding}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %{T2}%{T-}
+label-visible = %{T2}|{T-}
 label-visible-foreground = ${self.label-focused-foreground}
 label-visible-padding = ${self.label-focused-padding}
 
