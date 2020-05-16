@@ -1,6 +1,13 @@
 # Dotfiles
 
-nvim config, etc
+This repository includes setup for:
+
+- nvim
+- Polybar
+- Regolith Desktop
+- Oh-my-zsh
+- Git and git aliases
+
 
 ## Installation
 
@@ -40,3 +47,18 @@ If you add new files run `homeshick link` afterwards.
 homeshick pull
 homeshick link
 ```
+
+## Desktop Setup
+
+- Desktop: Regolith
+- Bar: Polybar
+- Notifications: Dunst
+- Shell: Oh my zsh, theme: muse
+
+### Additiional installation
+
+- feh: randomly select background image
+- i3lock: lockscreen
+- scrot: lockscreen
+- font-awesome, siji, termsynu: fonts
+
