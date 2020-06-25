@@ -37,3 +37,6 @@ alias week='date +%V'
 
 # Weather information
 alias weather='curl wttr.in'
+
+# Go hot-reloading
+alias air='~/.air'
