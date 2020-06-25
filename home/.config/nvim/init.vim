@@ -2,28 +2,45 @@ runtime! plugin/python_setup.vim
 
 call plug#begin('~/.vim/plugged')
 
+
+"Languages
 Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss', 'scss.css'] }
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'elmcast/elm-vim'
+Plug 'lpil/gleam.vim'
+Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'rykka/riv.vim' "rst
+Plug 'sheerun/vim-polyglot'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+"Other
 Plug 'honza/vim-snippets'
-Plug 'rhysd/clever-f.vim'
-Plug 'rhysd/vim-crystal'
-Plug 'scrooloose/syntastic'
 Plug 'sirver/ultisnips'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'rhysd/clever-f.vim'
+Plug 'scrooloose/syntastic'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/matchit.zip'
-Plug 'rykka/riv.vim'
-Plug 'elmcast/elm-vim'
-Plug 'lpil/gleam.vim'
+Plug 'tmhedberg/SimpylFold'
+Plug 'scrooloose/nerdtree'
+Plug 'sbdchd/neoformat'
+Plug 'sirver/ultisnips'
+Plug 'godlygeek/tabular'
+Plug 'mbbill/undotree', {'branch': 'master'}
+Plug 'itchyny/lightline.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'junegunn/vim-emoji'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -84,10 +101,20 @@ set lazyredraw
 " Default folds are no fun
 set nofoldenable
 
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
 " Delete comment character when joining commented lines
 if v:version > 703 || v:version == 703 && has("patch541")
   set formatoptions+=j
 endif
+
+"Open NerdTree
+map <C-w> :NERDTreeToggle<CR>
 
 
 """""""""""""""""""""""""""""""""
@@ -108,6 +135,14 @@ set shiftwidth=2    "An indent is 2 spaces
 set softtabstop=2   "Insert 2 spaces when tab is pressed
 set tabstop=2       "A tab is 2 spaces
 
+" Add indentation for certain files
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
+" Flag unnecessary whitespace
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 """""""""""""""""""
 " Persistent Undo "
