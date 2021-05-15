@@ -11,7 +11,7 @@ alias lla='ls -lah'
 alias c='cd'
 
 alias g='git'
-alias ga='git add .; and git status'
+alias ga='git add -u; and git status'
 alias gs='git status'
 
 # Browser
@@ -25,6 +25,12 @@ alias .....="cd ../../../.."
 
 # Kubernetes
 alias k="kubectl"
+alias kns="kubens"
+alias kctx="kubectx"
+alias kpf="kubectl port-forward"
+
+# Terraform
+alias tf="terraform"
 
 # Enable colored `grep` output
 alias grep='grep --color=auto'

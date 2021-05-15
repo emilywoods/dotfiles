@@ -1,48 +1,6 @@
 runtime! plugin/python_setup.vim
 
-call plug#begin('~/.vim/plugged')
-
-
-"Languages
-Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss', 'scss.css'] }
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'elmcast/elm-vim'
-Plug 'lpil/gleam.vim'
-Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'rykka/riv.vim' "rst
-Plug 'sheerun/vim-polyglot'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-
-"Other
-Plug 'honza/vim-snippets'
-Plug 'sirver/ultisnips'
-Plug 'rhysd/clever-f.vim'
-Plug 'scrooloose/syntastic'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-vinegar'
-Plug 'vim-scripts/matchit.zip'
-Plug 'tmhedberg/SimpylFold'
-Plug 'scrooloose/nerdtree'
-Plug 'sbdchd/neoformat'
-Plug 'sirver/ultisnips'
-Plug 'godlygeek/tabular'
-Plug 'mbbill/undotree', {'branch': 'master'}
-Plug 'itchyny/lightline.vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'junegunn/vim-emoji'
-Plug 'dense-analysis/ale'
-
-call plug#end()
+source ~/.config/nvim/plugins.vim
 
 filetype plugin indent on
 filetype plugin on
@@ -116,6 +74,20 @@ endif
 "Open NerdTree
 map <C-w> :NERDTreeToggle<CR>
 
+"RipGrep
+if executable('rg')
+    let g:rg_derive_root='true'
+endif
+
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let $FZF_DEFAULT_OPTS='--reverse'
+
+"fzf and ripgrep bindings
+
+nnoremap <C-p> :Files<CR>
+nnoremap <C-o> :Buffers<CR>
+nnoremap <C-g> :GFiles<CR>
+nnoremap <C-f> :Rg
 
 """""""""""""""""""""""""""""""""
 " Indentation, Tabs, Space, Etc "
@@ -136,13 +108,13 @@ set softtabstop=2   "Insert 2 spaces when tab is pressed
 set tabstop=2       "A tab is 2 spaces
 
 " Add indentation for certain files
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+au BufNewFile, BufRead *.html, *.css, *.js
+    \  set tabstop=2
+    \| set softtabstop=2
+    \| set shiftwidth=2
 
 " Flag unnecessary whitespace
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufRead, BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 """""""""""""""""""
 " Persistent Undo "
@@ -278,3 +250,17 @@ let g:syntastic_ruby_checkers=['mri']
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 
+"""""""""""""""""""""""""""
+"  plugin: vim-terraform  "
+"""""""""""""""""""""""""""
+let g:terraform_fmt_on_save=1
+let g:terraform_align=1
+
+"""""""""""""""""""""""""""
+"  plugin: Ale  "
+"""""""""""""""""""""""""""
+"Linting for Clojure with Ale
+" clj-kondo should be installed on operating system path
+let g:ale_linters = {
+      \ 'clojure': ['clj-kondo']
+      \}

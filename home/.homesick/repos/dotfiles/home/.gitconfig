@@ -1,5 +1,6 @@
 # This is Git's per-user configuration file.
 # Shortcut to view aliases: git config --list | grep alias
+
 [user]
 	name = Emily Woods
 	email = hello@emilywoods.me
@@ -87,3 +88,5 @@
 	default = current
 [push]
 	default = current
+[diff "sopsdiffer"]
+	textconv = sops -d

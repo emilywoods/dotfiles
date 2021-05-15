@@ -128,6 +128,10 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+##########
+## rofi ##
+##########
+bindsym $mod+t exec 'rofi -show drun' 
 
 ################
 ## workspaces ##
@@ -178,8 +182,8 @@ assign [class="Firefox-esr"] $ws2
 assign [class="Firefox"] $ws2
 assign [class="Code"] $ws3
 assign [class="Jetbrains-idea-ce"] $ws3
+assign [class="Spotify"] $ws8
 assign [class="Slack"] $ws9
-assign [class="Spotify"] $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
