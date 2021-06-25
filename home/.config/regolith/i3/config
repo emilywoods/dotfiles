@@ -99,6 +99,12 @@ bindsym $mod+Shift+question exec --no-startup-id $i3-wm.program.help
 set_from_resource $i3-wm.program.file_search i3-wm.program.file_search rofi -show find -modi find:/usr/share/rofi/modi/finder.sh
 bindsym $mod+$alt+space exec $i3-wm.program.file_search
 
+## Launch // Rofi - drun // <> u ##
+bindsym $mod+u exec "rofi -show drun"
+
+## Launch // Rofi - Windows // <> j ##
+bindsym $mod+p exec "rofi -show window"
+
 ###############################################################################
 # Window and Workspace Navigation
 ###############################################################################
@@ -250,8 +256,8 @@ assign [class="Firefox-esr"] $ws2
 assign [class="Firefox"] $ws2
 assign [class="Code"] $ws3
 assign [class="Jetbrains-idea-ce"] $ws3
+assign [class="spotify"] $ws8
 assign [class="Slack"] $ws9
-assign [class="Spotify"] $ws10
 
 ###############################################################################
 # Session Management
@@ -544,7 +550,7 @@ set_from_resource $i3-wm.program.3 i3-wm.program.3 :
 exec --no-startup-id $i3-wm.program.3
 
 # Set background image using feh
-exec --no-startup-id feh --bg-fill --randomize ~/Pictures/* 
+exec --no-startup-id feh --bg-fill --randomize ~/Pictures/background/* 
 
 ###############################################################################
 # Brightness
@@ -571,3 +577,11 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 ###############################################################################
 
 bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/i3lock.sh
+
+
+###############################################################################
+# VPN - Network Manager
+###############################################################################
+# See bug: https://github.com/regolith-linux/regolith-desktop/issues/64
+
+exec --no-startup-id /usr/bin/nm-applet
